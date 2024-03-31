@@ -1,16 +1,5 @@
-import { PRIMARY_COLOR } from "@/lib/constants";
-import {
-  Bar,
-  BarChart,
-  CartesianGrid,
-  Legend,
-  Pie,
-  PieChart,
-  ResponsiveContainer,
-  Tooltip,
-  XAxis,
-  YAxis,
-} from "recharts";
+import { PRIMARY } from "@/lib/constants";
+import { Bar, BarChart, ResponsiveContainer } from "recharts";
 
 const data = [
   {
@@ -43,11 +32,17 @@ const data = [
     pv: 4800,
     amt: 2181,
   },
+  {
+    name: "Page D",
+    uv: 2780,
+    pv: 3908,
+    amt: 2000,
+  },
 ];
 
-export default function ChannelPie() {
+export default function ChannelBar() {
   return (
-    <div className="flex-1 border p-4 text-lg">
+    <div className="flex-1 text-lg border rounded-lg p-4 bg-card">
       <p>Earnings</p>
 
       <p className="max-w-prose text-muted-foreground mt-2 text-base">
@@ -55,12 +50,12 @@ export default function ChannelPie() {
         iusto totam atque, vel.
       </p>
 
-      <ResponsiveContainer height={400} width={"100%"} className="mt-8">
+      <ResponsiveContainer height={300} width={"100%"} className="mt-8">
         <BarChart width={150} height={40} data={data}>
-          <XAxis dataKey="name" padding={{ left: 30, right: 30 }} />
-          <YAxis />
+          {/* <XAxis dataKey="name" padding={{ left: 30, right: 30 }} /> */}
+          {/* <YAxis /> */}
           {/* <Tooltip /> */}
-          <Bar dataKey="uv" fill={PRIMARY_COLOR} />
+          <Bar dataKey="uv" fill={PRIMARY} />
         </BarChart>
       </ResponsiveContainer>
     </div>

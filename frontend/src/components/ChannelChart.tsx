@@ -1,63 +1,49 @@
-import { PRIMARY_COLOR, PRIMARY_DULL_COLOR } from "@/lib/constants";
-import {
-  Line,
-  LineChart,
-  ResponsiveContainer,
-  Tooltip,
-  XAxis,
-  YAxis
-} from "recharts";
+import { PRIMARY, PRIMARY_DULL_COLOR } from "@/lib/constants";
+import { Line, LineChart, ResponsiveContainer, Tooltip } from "recharts";
 
 import { Icon } from "@iconify/react";
 
 const data = [
   {
     name: "Page A",
-    uv: 4000,
-    pv: 2400,
-    amt: 2400,
+    subscribers: 4000,
+    views: 2400,
   },
   {
     name: "Page B",
-    uv: 3000,
-    pv: 1398,
-    amt: 2210,
+    subscribers: 3000,
+    views: 1398,
   },
   {
     name: "Page C",
-    uv: 2000,
-    pv: 9800,
-    amt: 2290,
+    subscribers: 2000,
+    views: 9800,
   },
   {
     name: "Page D",
-    uv: 2780,
-    pv: 3908,
-    amt: 2000,
+    subscribers: 2780,
+    views: 3908,
   },
   {
     name: "Page E",
-    uv: 1890,
-    pv: 4800,
-    amt: 2181,
+    subscribers: 1890,
+    views: 4800,
   },
   {
     name: "Page F",
-    uv: 2390,
-    pv: 3800,
-    amt: 2500,
+    subscribers: 2390,
+    views: 3800,
   },
   {
     name: "Page G",
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
+    subscribers: 3490,
+    views: 4300,
   },
 ];
 
 export default function ChannelChart() {
   return (
-    <div className="border flex-[2_2_0%] p-4">
+    <div className="border flex-[2_2_0%] p-4 rounded-lg bg-card">
       <p className="text-lg">Channel Analytics</p>
       <div className="flex mt-2 justify-between">
         <p className="max-w-prose text-muted-foreground">
@@ -67,36 +53,31 @@ export default function ChannelChart() {
 
         <div className="flex items-end gap-6">
           <p className="flex gap-2 items-center">
-            <Icon
-              color={PRIMARY_COLOR}
-              icon="fluent:line-horizontal-1-24-regular"
-            />
-            Regular
+            <Icon color={PRIMARY} icon="fluent:line-horizontal-1-24-regular" />
+            Subscribers
           </p>
           <p className="flex gap-2 items-center">
             <Icon
               color={PRIMARY_DULL_COLOR}
               icon="fluent:line-horizontal-1-dashes-24-regular"
             />
-            Dash
+            Views
           </p>
         </div>
       </div>
 
-      <ResponsiveContainer height={400} width={"100%"} className="mt-8">
+      <ResponsiveContainer height={300} width={"100%"} className="mt-8">
         <LineChart data={data}>
-          <XAxis dataKey="name" padding={{ left: 30, right: 30 }} />
-          <YAxis />
           <Tooltip />
           <Line
             type="monotone"
-            dataKey="pv"
-            stroke={PRIMARY_COLOR}
+            dataKey="views"
+            stroke={PRIMARY}
             activeDot={{ r: 8 }}
           />
           <Line
             type="monotone"
-            dataKey="uv"
+            dataKey="subscribers"
             stroke={PRIMARY_DULL_COLOR}
             strokeDasharray="6"
           />

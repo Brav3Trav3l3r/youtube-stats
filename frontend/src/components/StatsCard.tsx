@@ -1,4 +1,4 @@
-import { PRIMARY_COLOR } from "@/lib/constants";
+import { PRIMARY } from "@/lib/constants";
 import React from "react";
 import { Line, LineChart, ResponsiveContainer } from "recharts";
 
@@ -103,7 +103,7 @@ const Card: React.FC<{ el: Item }> = ({ el }) => {
         <div className="mt-6">
           <ResponsiveContainer height={80}>
             <LineChart data={data} className="">
-              <Line type="monotone" dataKey="uv" stroke={PRIMARY_COLOR} />
+              <Line type="monotone" dataKey="uv" stroke={PRIMARY} />
             </LineChart>
           </ResponsiveContainer>
         </div>
