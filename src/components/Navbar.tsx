@@ -15,8 +15,8 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="border p-2 lg:px-8 lg:py-4">
-      <div className="flex justify-between lg:max-w-screen-xl mx-auto">
+    <nav className="border-b fixed w-full top-0 bg-background z-100">
+      <div className="flex p-4 justify-between lg:max-w-screen-xl mx-auto">
         <div className="flex gap-2 items-center">
           <Fingerprint />
           <p className="text-xl font-medium">Footprint</p>

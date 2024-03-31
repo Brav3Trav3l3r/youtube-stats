@@ -10,13 +10,14 @@ import {
 
 export default function Header() {
   return (
-    <div className="mt-6 p-4 flex flex-col lg:flex-row gap-4 justify-between lg:max-w-screen-xl mx-auto">
+    <div className="mt-6 p-4 flex flex-col lg:flex-row gap-4 justify-between ">
       <div>
         <p>
-          <span className="text-muted-foreground">Overview</span> / Subsriptions
+          <span className="text-muted-foreground">Overview</span> / Youtube Stats
         </p>
         <h1 className="text-3xl mt-2">
-          Welcome Back, <span className="font-semibold">Mr Beast</span>
+          Welcome Back,{" "}
+          <span className="font-semibold">Mr Beast</span>
         </h1>
         <p className="text-muted-foreground mt-4 max-w-prose">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia id

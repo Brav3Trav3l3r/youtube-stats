@@ -81,7 +81,7 @@ const data = [
 
 export default function StatsCard() {
   return (
-    <div className="flex mt-8 flex-col gap-4 md:flex-row max-w-screen-xl mx-auto p-4">
+    <div className="grid sm:grid-cols-2 lg:grid-cols-4 mt-8 max-w-screen-xl gap-4 mx-auto p-4">
       {cardsData.map((el) => (
         <Card key={el.title} el={el} />
       ))}
@@ -91,7 +91,7 @@ export default function StatsCard() {
 
 const Card: React.FC<{ el: Item }> = ({ el }) => {
   return (
-    <div className="p-4 bg-card flex-1 gap-3 border rounded-lg">
+    <div className="min-w-48 p-4 bg-card flex-1 gap-3 border rounded-lg">
       <p className="">Total {el.title}</p>
       <p className="font-semibold text-2xl mt-2">{el.value}</p>
       {el.flowPercent && (
