@@ -103,7 +103,9 @@ const downTrend = [
 
 const fetchChannelInfo = async () => {
   const { data } = await axios.get(
-    import.meta.env.VITE_BACKEND_URL + "/channels/660a625316f547d68d7e4e9c"
+    import.meta.env.VITE_BACKEND_URL +
+      "/channels/" +
+      import.meta.env.VITE_CHANNEL_ID
   );
   return data;
 };
@@ -147,7 +149,7 @@ const Card: React.FC<{ el: Item; title: string }> = ({ el, title }) => {
         <div className="mt-6">
           <ResponsiveContainer height={80}>
             <LineChart
-              data={(el.trend == "up" ? upTrend : downTrend)}
+              data={el.trend == "up" ? upTrend : downTrend}
               className=""
             >
               <Line

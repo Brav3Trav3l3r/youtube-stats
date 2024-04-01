@@ -13,7 +13,9 @@ import getFormatedDate from "@/utils/getFormatedDate";
 
 const fetchChannelInfo = async () => {
   const { data } = await axios.get(
-    import.meta.env.VITE_BACKEND_URL + "/channels/660a625316f547d68d7e4e9c"
+    import.meta.env.VITE_BACKEND_URL +
+      "/channels/" +
+      import.meta.env.VITE_CHANNEL_ID
   );
   return data;
 };
