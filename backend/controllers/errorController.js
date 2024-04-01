@@ -1,3 +1,5 @@
+const AppError = require("../utils/appError");
+
 const handleDuplicateError = (err, req, res) => {
   const field = Object.keys(err.keyPattern)[0];
   const errorObj = {};
@@ -60,13 +62,6 @@ module.exports = (err, req, res, next) => {
 
     if (error.name === "CastError") {
       error = new AppError("Not found", 404);
-    }
-
-    if (error.name === "TokenExpiredError") {
-      error = new AppError(
-        "Token is not valid, or has expired. Login to get the token.",
-        401
-      );
     }
 
     return sendProdError(error, req, res);

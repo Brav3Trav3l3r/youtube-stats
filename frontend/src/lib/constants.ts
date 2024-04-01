@@ -5,3 +5,5 @@ export const LIGHT_PRIMARY_FOREGROUND = "#fafaf9";
 export const PRIMARY_DULL_COLOR = "#0C9EEA";
 export const BORDER = "#292524";
 export const LIGHT_BORDER = "#e7e5e4";
+export const DESTRUCTIVE = "#ef4444";
+export const SUCCESS = "green";

@@ -6,12 +6,15 @@ import Header from "./components/Header";
 import MapChart from "./components/MapChart";
 import Navbar from "./components/Navbar";
 import StatsCard from "./components/StatsCard";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 function App() {
-  return (
-    <>
-      <Navbar />
+  const queryClient = new QueryClient();
 
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Navbar />
+      
       <SignedOut>
         <main className="lg:max-w-screen-xl mx-auto mt-28">
           <SignInButton />
@@ -27,7 +30,6 @@ function App() {
             <ChannelChart />
             <ChannelBar />
           </div>
-
           <div className="mt-6 border rounded-lg p-4 m-4">
             <p className="text-lg">Audience</p>
             <div className="flex flex-col gap-8 md:flex-row md:items-center">
@@ -37,7 +39,7 @@ function App() {
           </div>
         </main>
       </SignedIn>
-    </>
+    </QueryClientProvider>
   );
 }
 

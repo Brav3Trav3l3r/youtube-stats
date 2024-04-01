@@ -3,10 +3,12 @@ const mongoose = require("mongoose");
 const app = require("../app");
 
 console.log(process.env.NODE_ENV);
+console.log(process.env.MONGODB_URI);
+console.log(process.env.PORT);
 
 process.on("uncaughtException", (err) => {
   console.log("Uncaught Exception 💥");
-  console.log(err.name);
+  console.log(err);
   process.exit(1);
 });
 
@@ -20,7 +22,7 @@ const server = app.listen(process.env.PORT, () => {
 
 process.on("unhandledRejection", (err) => {
   console.log("Unhandled Rejection 💥");
-  console.log(err.name, err.message);
+  console.log(err);
 
   server.close(() => process.exit(1));
 });

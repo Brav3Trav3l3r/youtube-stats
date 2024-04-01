@@ -12,8 +12,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon api/index.js",
-    "start:prod": "cross-env NODE_ENV=production nodemon api/index.js"
+    "start": "nodemon ./api/index.js",
+    "start:prod": "cross-env NODE_ENV=production nodemon ./api/index.js"
   },
   "keywords": [],
   "author": "",
